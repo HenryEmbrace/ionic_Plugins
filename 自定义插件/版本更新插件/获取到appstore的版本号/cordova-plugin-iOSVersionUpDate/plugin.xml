@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin id="cordova-plugin-iOSVersionUpDate" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>cordova-plugin-iOSVersionUpDate</name>
+  <description>Cordova plugin that for load a webView.</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,phonegap,UpdateApp,custom</keywords>
+
+  <js-module src="www/iOSVersionUpDate.js" name="iOSVersionUpDate">
+    <clobbers target="iOSVersionUpDate" />
+  </js-module>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="iOSVersionUpDate">
+        <param name="ios-package" value="iOSVersionUpDate" onload="true" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/iOSVersionUpDate.h" />
+    <source-file src="src/ios/iOSVersionUpDate.m" />
+
+
+  </platform>
+
+</plugin>

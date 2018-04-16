@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="photoandvideo" version="0.9.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>
+		photoandvideo
+	</name>
+	<description>
+		Cordova plugin that for video and photo record.
+	</description>
+	<license>
+		Apache 2.0
+	</license>
+	<keywords>
+		cordova,phonegap,video,photo,camera,custom
+	</keywords>
+	<js-module name="PhotoAndVideo" src="www/PhotoAndVideo.js">
+		<clobbers target="PhotoAndVideo" />
+	</js-module>
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="PhotoAndVideo">
+				<param name="ios-package" onload="true" value="PhotoAndVideo" />
+			</feature>
+		</config-file>
+		<header-file src="src/ios/PhotoAndVideo.h" />
+		<source-file src="src/ios/PhotoAndVideo.m" />
+		<header-file src="src/ios/RCMediaCaptureView.h" />
+		<source-file src="src/ios/RCMediaCaptureView.m" />
+		<header-file src="src/ios/RCMediaConstant.h" />
+		<source-file src="src/ios/RCMediaConstant.m" />
+		<header-file src="src/ios/RCMediaFocusView.h" />
+		<source-file src="src/ios/RCMediaFocusView.m" />
+		<header-file src="src/ios/RCMediaPreview.h" />
+		<source-file src="src/ios/RCMediaPreview.m" />
+		<header-file src="src/ios/RCMediaToolbar.h" />
+		<source-file src="src/ios/RCMediaToolbar.m" />
+		<header-file src="src/ios/RCMediaViewController.h" />
+		<source-file src="src/ios/RCMediaViewController.m" />
+		<header-file src="src/ios/RCSimpleHUD.h" />
+		<source-file src="src/ios/RCSimpleHUD.m" />
+		<framework src="ImageIO.framework" weak="true" />
+		<framework src="MobileCoreServices.framework" />
+		<framework src="CoreLocation.framework" />
+		<framework src="CoreGraphics.framework" />
+		<framework src="AssetsLibrary.framework" />
+		<framework src="CoreGraphics.framework" />
+		<framework src="CoreImage.framework" />
+		<framework src="OpenGLES.framework" />
+		<framework src="GLKit.framework" />
+		<framework src="CoreVideo.framework" />
+		<framework src="QuartzCore.framework" />
+		<framework src="AVFoundation.framework" />
+		<preference default=" " name="CAMERA_USAGE_DESCRIPTION" />
+		<config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+			<string>
+				$CAMERA_USAGE_DESCRIPTION
+			</string>
+		</config-file>
+		<preference default=" " name="MICROPHONE_USAGE_DESCRIPTION" />
+		<config-file parent="NSMicrophoneUsageDescription" target="*-Info.plist">
+			<string>
+				$MICROPHONE_USAGE_DESCRIPTION
+			</string>
+		</config-file>
+		<preference default=" " name="PHOTOLIBRARY_USAGE_DESCRIPTION" />
+		<config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
+			<string>
+				$PHOTOLIBRARY_USAGE_DESCRIPTION
+			</string>
+		</config-file>
+	</platform>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="PhotoAndVideo">
+				<param name="android-package" value="com.photoandvideo.PhotoAndVideo" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml">
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-feature android:name="android.hardware.camera" />
+			<uses-feature android:name="android.hardware.camera.autofocus" />
+			<uses-permission android:name="android.permission.RECORD_AUDIO" />
+			<uses-permission android:name="android.permission.CAMERA" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    	</config-file>
+    	<config-file target="AndroidManifest.xml" parent="/manifest/application">
+      		<activity android:name="com.photoandvideo.CameraActivity"/>
+    	</config-file>
+		<source-file src="src/android/PhotoAndVideo.java" target-dir="src/com/photoandvideo" />
+		<source-file src="src/android/CameraActivity.java" target-dir="src/com/photoandvideo" />
+    	<source-file src="src/android/activity_camera.xml" target-dir="res/layout" />
+    	<source-file src="src/android/ic_camera_enhance_black_24dp.xml" target-dir="res/drawable" />
+    	<framework src="cjt.library.wheel:camera:1.1.2" />
+	</platform>
+</plugin>

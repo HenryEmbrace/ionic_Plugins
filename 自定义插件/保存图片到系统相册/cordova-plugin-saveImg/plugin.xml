@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin id="cordova-plugin-saveImg" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>cordova-plugin-saveImg</name>
+  <description>Cordova plugin that for load a webView.</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,phonegap,video,custom</keywords>
+  <!--<repo>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git</repo>-->
+  <!--<issue>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview/issues</issue>-->
+
+  <js-module src="www/SaveImgToAlbum.js" name="SaveImgToAlbum">
+    <clobbers target="SaveImgToAlbum" />
+  </js-module>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="SaveImgToAlbum">
+        <param name="ios-package" value="SaveImgToAlbum" onload="true" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/SaveImgToAlbum.h" />
+    <source-file src="src/ios/SaveImgToAlbum.m" />
+
+
+  </platform>
+
+</plugin>

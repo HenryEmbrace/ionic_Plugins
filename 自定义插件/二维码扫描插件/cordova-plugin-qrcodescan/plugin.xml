@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin id="cordova-plugin-qrcodescan" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <name>cordova-plugin-qrcodescan</name>
+    <description>Cordova plugin that for QRCodeScan.</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,phonegap,QRCodeScan,custom</keywords>
+    
+    <js-module src="www/QRCodeScan.js" name="QRCodeScan">
+        <clobbers target="QRCodeScan" />
+    </js-module>
+    
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="QRCodeScan">
+                <param name="ios-package" value="QRCodeScan" onload="true" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/QRCodeGenerateVC.h" />
+        <source-file src="src/ios/QRCodeGenerateVC.m" />
+        <header-file src="src/ios/QRCodeScan.h" />
+        <source-file src="src/ios/QRCodeScan.m" />
+        <header-file src="src/ios/ScanSuccessJumpVC.h" />
+        <source-file src="src/ios/ScanSuccessJumpVC.m" />
+        <header-file src="src/ios/SGQRCodeScanningVC.h" />
+        <source-file src="src/ios/SGQRCodeScanningVC.m" />
+        
+        <!-- SGQRCode-->
+        <header-file src="src/ios/SGQRCode/SGQRCode.h" />
+        <header-file src="src/ios/SGQRCode/SGQRCodeManager.h" />
+        <source-file src="src/ios/SGQRCode/SGQRCodeManager.m" />
+        <resource-file src="src/ios/SGQRCode/SGQRCode.bundle" />
+<!--    /Category-->
+        
+        
+        <header-file src="src/ios/SGQRCode/Category/UIImage+SGHelper.h" />
+        <source-file src="src/ios/SGQRCode/Category/UIImage+SGHelper.m" />
+        
+       
+        
+        <!--    Controllers-->
+        
+        <header-file src="src/ios/SGQRCode/CustomControls/SGQRCodeScanningView.h" />
+        <source-file src="src/ios/SGQRCode/CustomControls/SGQRCodeScanningView.m" />
+        <header-file src="src/ios/SGQRCode/CustomControls/SGWebView.h" />
+        <source-file src="src/ios/SGQRCode/CustomControls/SGWebView.m" />
+        
+    </platform>
+    
+</plugin>

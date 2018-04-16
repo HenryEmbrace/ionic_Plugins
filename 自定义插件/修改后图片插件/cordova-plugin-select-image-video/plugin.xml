@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-select-image-video" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>
+        SelectImageVideo
+    </name>
+    <js-module name="SelectImageVideo" src="www/SelectImageVideo.js">
+        <clobbers target="cordova.plugins.SelectImageVideo">
+        </clobbers>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="SelectImageVideo">
+                <param name="android-package" value="com.dias.plugin.SelectImageVideo">
+                </param>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+        </config-file>
+        <source-file src="src/android/SelectImageVideo.java" target-dir="src/com/dias/plugin">
+        </source-file>
+        <framework src="com.github.LuckSiege:PictureSelectorLight:v2.0.4" />
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SelectImageVideo">
+                <param name="ios-package" value="SelectImageVideo" onload="true" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/SelectImageVideo.h" />
+        <source-file src="src/ios/SelectImageVideo.m" />
+        <header-file src="src/ios/MediaUtils.h" />
+        <source-file src="src/ios/MediaUtils.m" />
+        
+        <!-- XMNPhotoPickerFramework-->
+        <header-file src="src/ios/XMNPhotoPickerFramework/XMNPhotoManager.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/XMNPhotoManager.m" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/XMNPhotoPickerDefines.h" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/XMNPhotoPickerFramework.h" />
+        
+        
+        <!-- Categories-->
+        
+        <header-file src="src/ios/XMNPhotoPickerFramework/Categories/UIView+Animations.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Categories/UIView+Animations.m" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/Categories/UIViewController+XMNPhotoHUD.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Categories/UIViewController+XMNPhotoHUD.m" />
+        
+        <!--    Controllers-->
+        
+        <header-file src="src/ios/XMNPhotoPickerFramework/Controllers/XMNPhotoCollectionController.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Controllers/XMNPhotoCollectionController.m" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/Controllers/XMNPhotoPickerController.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Controllers/XMNPhotoPickerController.m" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/Controllers/XMNPhotoPreviewController.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Controllers/XMNPhotoPreviewController.m" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/Controllers/XMNVideoPreviewController.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Controllers/XMNVideoPreviewController.m" />
+        
+        
+        <!--Models-->
+        
+        <header-file src="src/ios/XMNPhotoPickerFramework/Models/XMNAlbumModel.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Models/XMNAlbumModel.m" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/Models/XMNAssetModel.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Models/XMNAssetModel.m" />
+        
+        <!--Views-->
+        <header-file src="src/ios/XMNPhotoPickerFramework/Views/XMNAlbumCell.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Views/XMNAlbumCell.m" />
+        <resource-file src="src/ios/XMNPhotoPickerFramework/Views/XMNAlbumCell.xib" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/Views/XMNAssetCell.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Views/XMNAssetCell.m" />
+        <resource-file src="src/ios/XMNPhotoPickerFramework/Views/XMNAssetCell.xib" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/Views/XMNBottomBar.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Views/XMNBottomBar.m" />
+        <resource-file src="src/ios/XMNPhotoPickerFramework/Views/XMNBottomBar.xib" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/Views/XMNPhotoPicker.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Views/XMNPhotoPicker.m" />
+        <resource-file src="src/ios/XMNPhotoPickerFramework/Views/XMNPhotoPicker.xib" />
+        
+        <header-file src="src/ios/XMNPhotoPickerFramework/Views/XMNPhotoPreviewCell.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Views/XMNPhotoPreviewCell.m" />
+        <header-file src="src/ios/XMNPhotoPickerFramework/Views/XMNPhotoStickLayout.h" />
+        <source-file src="src/ios/XMNPhotoPickerFramework/Views/XMNPhotoStickLayout.m" />
+        
+        <!--icons-->
+<!--        <resource-file src="src/ios/XMNPhotoPickerFramework/iconimgs/bottom_bar_number_background@2x.png" />-->
+<!--        <resource-file src="src/ios/XMNPhotoPickerFramework/iconimgs/bottom_bar_origin_normal@2x.png" />-->
+<!--        <resource-file src="src/ios/XMNPhotoPickerFramework/iconimgs/bottom_bar_origin_selected@2x.png" />-->
+<!--        <resource-file src="src/ios/XMNPhotoPickerFramework/iconimgs/navigation_back@2x" />-->
+<!--        <resource-file src="src/ios/XMNPhotoPickerFramework/iconimgs/photo_state_normal@2x" />-->
+<!--        <resource-file src="src/ios/XMNPhotoPickerFramework/iconimgs/photo_state_selected@2x" />-->
+<!--        <resource-file src="src/ios/XMNPhotoPickerFramework/iconimgs/video_icon@2x" />-->
+<!--        <resource-file src="src/ios/XMNPhotoPickerFramework/iconimgs/video_preview_play_highlight@2x" />-->
+<!--        <resource-file src="src/ios/XMNPhotoPickerFramework/iconimgs/video_preview_play_normal@2x" />-->
+        
+    </platform>
+
+</plugin>

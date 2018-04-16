@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-select-image-video" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>
+        SelectImageVideo
+    </name>
+    <js-module name="SelectImageVideo" src="www/SelectImageVideo.js">
+        <clobbers target="cordova.plugins.SelectImageVideo">
+        </clobbers>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="SelectImageVideo">
+                <param name="android-package" value="com.dias.plugin.SelectImageVideo">
+                </param>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+        </config-file>
+        <source-file src="src/android/SelectImageVideo.java" target-dir="src/com/dias/plugin">
+        </source-file>
+        <framework src="com.github.LuckSiege:PictureSelectorLight:v2.0.4" />
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="SelectImageVideo">
+                <param name="ios-package" value="SelectImageVideo" onload="true" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/SelectImageVideo.h" />
+        <source-file src="src/ios/SelectImageVideo.m" />
+        <header-file src="src/ios/MediaUtils.h" />
+        <source-file src="src/ios/MediaUtils.m" />
+        <header-file src="src/ios/ImageCutViewController.h" />
+        <source-file src="src/ios/ImageCutViewController.m" />
+        <header-file src="src/ios/ShowGetImgArrCell.h" />
+        <source-file src="src/ios/ShowGetImgArrCell.m" />
+        
+        
+        <!--BYImagePickerController -->
+        <header-file src="src/ios/BYImagePickerController/NSBundle+BYImagePicker.h" />
+        <source-file src="src/ios/BYImagePickerController/NSBundle+BYImagePicker.m" />
+        <resource-file src="src/ios/BYImagePickerController/BYImagePickerController.bundle" />
+        <header-file src="src/ios/BYImagePickerController/BYAssetCell.h" />
+        <source-file src="src/ios/BYImagePickerController/BYAssetCell.m" />
+        <header-file src="src/ios/BYImagePickerController/BYAssetModel.h" />
+        <source-file src="src/ios/BYImagePickerController/BYAssetModel.m" />
+        <header-file src="src/ios/BYImagePickerController/BYGifPhotoPreviewController.h" />
+        <source-file src="src/ios/BYImagePickerController/BYGifPhotoPreviewController.m" />
+        <header-file src="src/ios/BYImagePickerController/BYImageCropManager.h" />
+        <source-file src="src/ios/BYImagePickerController/BYImageCropManager.m" />
+        <header-file src="src/ios/BYImagePickerController/BYImageManager.h" />
+        <source-file src="src/ios/BYImagePickerController/BYImageManager.m" />
+        <header-file src="src/ios/BYImagePickerController/BYImagePickerController.h" />
+        <source-file src="src/ios/BYImagePickerController/BYImagePickerController.m" />
+        <header-file src="src/ios/BYImagePickerController/BYLocationManager.h" />
+        <source-file src="src/ios/BYImagePickerController/BYLocationManager.m" />
+        <header-file src="src/ios/BYImagePickerController/BYPhotoPickerController.h" />
+        <source-file src="src/ios/BYImagePickerController/BYPhotoPickerController.m" />
+        <header-file src="src/ios/BYImagePickerController/BYPhotoPreviewCell.h" />
+        <source-file src="src/ios/BYImagePickerController/BYPhotoPreviewCell.m" />
+        <header-file src="src/ios/BYImagePickerController/BYPhotoPreviewController.h" />
+        <source-file src="src/ios/BYImagePickerController/BYPhotoPreviewController.m" />
+        <header-file src="src/ios/BYImagePickerController/BYProgressView.h" />
+        <source-file src="src/ios/BYImagePickerController/BYProgressView.m" />
+        <header-file src="src/ios/BYImagePickerController/BYVideoPlayerController.h" />
+        <source-file src="src/ios/BYImagePickerController/BYVideoPlayerController.m" />
+        <header-file src="src/ios/BYImagePickerController/UIView+BYLayout.h" />
+        <source-file src="src/ios/BYImagePickerController/UIView+BYLayout.m" />
+    
+    </platform>
+</plugin>

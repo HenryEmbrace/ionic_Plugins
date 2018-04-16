@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin id="cordova-plugin-playvideo" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>cordova-plugin-playvideo</name>
+  <description>Cordova plugin that for play video.</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,phonegap,video,custom</keywords>
+  <!--<repo>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git</repo>-->
+  <!--<issue>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview/issues</issue>-->
+
+  <js-module src="www/PlayVideo.js" name="PlayVideo">
+    <clobbers target="PlayVideo" />
+  </js-module>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="PlayVideo">
+        <param name="ios-package" value="PlayVideo" onload="true" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/PlayVideo.h" />
+    <source-file src="src/ios/PlayVideo.m" />
+
+    <header-file src="src/ios/VideoPreview.h" />
+    <source-file src="src/ios/VideoPreview.m" />
+
+    <header-file src="src/ios/ShowVideoViewController.h" />
+    <source-file src="src/ios/ShowVideoViewController.m" />
+
+    <framework src="CoreVideo.framework" />
+    <framework src="QuartzCore.framework"/>
+    <framework src="AVFoundation.framework" />
+
+  </platform>
+
+</plugin>

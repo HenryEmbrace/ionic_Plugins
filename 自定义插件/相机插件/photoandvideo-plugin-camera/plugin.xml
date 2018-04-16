@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin id="photoandvideo-plugin-camera" version="0.9.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>photoandvideo-plugin-camera</name>
+  <description>Cordova plugin that for video and photo record.</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,phonegap,video,photo,camera,custom</keywords>
+  <!--<repo>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git</repo>-->
+  <!--<issue>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview/issues</issue>-->
+
+  <js-module src="www/PhotoAndVideo.js" name="PhotoAndVideo">
+    <clobbers target="PhotoAndVideo" />
+  </js-module>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="PhotoAndVideo">
+        <param name="ios-package" value="PhotoAndVideo" onload="true" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/PhotoAndVideo.h" />
+    <source-file src="src/ios/PhotoAndVideo.m" />
+
+    <header-file src="src/ios/RCMediaCaptureView.h" />
+    <source-file src="src/ios/RCMediaCaptureView.m" />
+
+    <header-file src="src/ios/RCMediaConstant.h" />
+    <source-file src="src/ios/RCMediaConstant.m" />
+
+    <header-file src="src/ios/RCMediaFocusView.h" />
+    <source-file src="src/ios/RCMediaFocusView.m" />
+
+    <header-file src="src/ios/RCMediaPreview.h" />
+    <source-file src="src/ios/RCMediaPreview.m" />
+
+    <header-file src="src/ios/RCMediaToolbar.h" />
+    <source-file src="src/ios/RCMediaToolbar.m" />
+
+    <header-file src="src/ios/RCMediaViewController.h" />
+    <source-file src="src/ios/RCMediaViewController.m" />
+
+    <header-file src="src/ios/RCSimpleHUD.h" />
+    <source-file src="src/ios/RCSimpleHUD.m" />
+
+
+    <framework src="ImageIO.framework" weak="true" />
+    <framework src="MobileCoreServices.framework" />
+    <framework src="CoreLocation.framework" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="AssetsLibrary.framework" />
+    <framework src="CoreGraphics.framework" />
+    <framework src="CoreImage.framework" />
+    <framework src="OpenGLES.framework" />
+    <framework src="GLKit.framework" />
+    <framework src="CoreVideo.framework" />
+    <framework src="QuartzCore.framework"/>
+    <framework src="AVFoundation.framework" />
+
+    <preference name="CAMERA_USAGE_DESCRIPTION" default=" " />
+    <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+      <string>$CAMERA_USAGE_DESCRIPTION</string>
+    </config-file>
+
+    <preference name="MICROPHONE_USAGE_DESCRIPTION" default=" " />
+    <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+      <string>$MICROPHONE_USAGE_DESCRIPTION</string>
+    </config-file>
+
+    <preference name="PHOTOLIBRARY_USAGE_DESCRIPTION" default=" " />
+    <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+      <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
+    </config-file>
+
+  </platform>
+
+</plugin>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin id="cordova-plugin-loadweb" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>cordova-plugin-loadweb</name>
+  <description>Cordova plugin that for load a webView.</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,phonegap,video,custom</keywords>
+  <!--<repo>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git</repo>-->
+  <!--<issue>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview/issues</issue>-->
+
+  <js-module src="www/WebViewLoad.js" name="WebViewLoad">
+    <clobbers target="WebViewLoad" />
+  </js-module>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="WebViewLoad">
+        <param name="ios-package" value="WebViewLoad" onload="true" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/WebViewLoad.h" />
+    <source-file src="src/ios/WebViewLoad.m" />
+
+    <header-file src="src/ios/WebViewController.h" />
+    <source-file src="src/ios/WebViewController.m" />
+
+  </platform>
+
+</plugin>
